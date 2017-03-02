@@ -1,35 +1,20 @@
-import {NgModule, ErrorHandler} from "@angular/core";
-import {IonicApp, IonicModule, IonicErrorHandler} from "ionic-angular";
-import {LimamealApp} from "./app.component";
-import {BundlesPage} from "../pages/bundles/bundles";
-import {CartPage} from "../pages/cart/cart";
-import {TabsPage} from "../pages/tabs/tabs";
-import {ArticlesPage} from "../pages/articles/articles";
-import {Storage} from "@ionic/storage";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    LimamealApp,
-    ArticlesPage,
-    BundlesPage,
-    CartPage,
-    TabsPage
+    AppComponent
   ],
   imports: [
-    IonicModule.forRoot(LimamealApp)
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    LimamealApp,
-    ArticlesPage,
-    BundlesPage,
-    CartPage,
-    TabsPage
-  ],
-  providers: [
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Storage
-  ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
