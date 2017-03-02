@@ -9,8 +9,8 @@ export class ArticlesService {
   constructor(private httpService: HttpService) {
   }
 
-  public getArticles(): Promise<Article[]> {
-    return this.httpService.executeRequest(new ArticlesGetRequest()).toPromise()
+  async getArticles(): Promise<Article[]> {
+    return this.httpService.executeRequest(new ArticlesGetRequest()).toPromise<Article[]>()
   }
 
 }
