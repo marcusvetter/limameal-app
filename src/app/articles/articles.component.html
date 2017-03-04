@@ -1,8 +1,8 @@
-<p>
-  articles works!
-</p>
-<div>
-  <div *ngFor="let article of articles">
-    {{ article.id }}: {{ article.name }}
-  </div>
-</div>
+<ul class="list-group">
+  <li *ngFor="let article of articles" class="list-group-item flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      {{ article.name }}
+      <button type="button" class="btn btn-sm btn-outline-success">+</button>
+    </div>
+  </li>
+</ul>
