@@ -1,14 +1,24 @@
-node {
-  stage('Checkout and Build') {
-    checkout scm
-    sh 'npm install'
+pipeline {
+  agent any
+  tools {
+    nodejs 'Node 7.x'
   }
-
-  stage('Unit Test') {
-    sh 'npm test'
-  }
-
-  stage('E2E Test') {
-    sh 'npm run e2e'
+  stages {
+    stage('Build') {
+      steps {
+        sh 'npm install'
+      }
+    }
+    stage('Unit Test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+    stage('E2E Test') {
+      steps {
+        sh 'npm run pree2e'
+        sh 'npm run e2e'
+      }
+    }
   }
 }
