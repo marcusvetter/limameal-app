@@ -1,16 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from "@angular/core/testing";
+import {CartComponent} from "./cart.component";
+import {Router} from "@angular/router";
 
-import { CartComponent } from './cart.component';
+let routerStub;
 
 describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ CartComponent ]
-    })
-    .compileComponents();
+    routerStub = {
+      navigate: jasmine.createSpy('navigate')
+    };
+    TestBed
+      .configureTestingModule({
+        declarations: [CartComponent],
+        providers: [{provide: Router, useValue: routerStub}],
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

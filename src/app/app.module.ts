@@ -6,8 +6,10 @@ import {AppComponent} from "./app.component";
 import {ArticlesComponent} from "./articles/articles.component";
 import {RouterModule} from "@angular/router";
 import {APP_ROUTES} from "./app.routes";
-import { BundlesComponent } from './bundles/bundles.component';
-import { CartComponent } from './cart/cart.component';
+import {BundlesComponent} from "./bundles/bundles.component";
+import {CartComponent} from "./cart/cart.component";
+import {ArticlesService} from "./articles/articles.service";
+import {HttpService} from "./common/http/http.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ArticlesService,
+    HttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

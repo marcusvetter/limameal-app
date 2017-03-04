@@ -23,7 +23,7 @@ export class HttpService {
   private logRequest(request: AbstractRequest) {
     let method = '';
 
-    switch(request.getRequest().method) {
+    switch (request.getRequest().method) {
       case RequestMethod.Get: {
         method = 'GET';
         break;
