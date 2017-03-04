@@ -1,11 +1,12 @@
 import { browser, element, by } from 'protractor';
 
 export class LimamealAppPage {
+
   navigateTo() {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getNavTitleText() {
+    return element(by.id('test-nav-title')).getText();
   }
 }

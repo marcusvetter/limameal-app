@@ -7,8 +7,8 @@ describe('limameal-app App', function() {
     page = new LimamealAppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display navigation bar title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getNavTitleText()).toEqual('limameal');
   });
 });
