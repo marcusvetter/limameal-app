@@ -2,7 +2,7 @@
   <li *ngFor="let article of articles" class="list-group-item flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       {{ article.name }}
-      <button type="button" class="btn btn-sm btn-outline-success">+</button>
+      <button type="button" class="btn btn-sm btn-outline-success" (click)="addToCart(article)">+</button>
     </div>
   </li>
 </ul>

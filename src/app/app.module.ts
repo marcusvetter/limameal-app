@@ -10,6 +10,7 @@ import {BundlesComponent} from "./bundles/bundles.component";
 import {CartComponent} from "./cart/cart.component";
 import {ArticlesService} from "./articles/articles.service";
 import {HttpService} from "./common/http/http.service";
+import {CartService} from "./cart/cart.service";
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import {HttpService} from "./common/http/http.service";
     HttpModule
   ],
   providers: [
+    HttpService,
     ArticlesService,
-    HttpService
+    CartService
   ],
   bootstrap: [AppComponent]
 })
