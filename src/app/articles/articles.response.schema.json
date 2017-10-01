@@ -1,0 +1,18 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "The unique identifier for an article",
+        "type": "string"
+      },
+      "name": {
+        "description": "Name of the article",
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": ["id", "name"]
+  }
+}

@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "app/articles/articles.response.schema.json"
       ],
       "index": "index.html",
       "main": "main.ts",

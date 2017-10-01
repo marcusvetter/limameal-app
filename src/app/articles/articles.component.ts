@@ -18,7 +18,6 @@ export class ArticlesComponent implements OnInit {
 
   async ngOnInit() {
     this.articles = await this.articlesService.getArticles();
-    console.log(this.articles);
   }
 
   addToCart(article: Article) {
