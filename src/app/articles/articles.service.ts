@@ -12,7 +12,7 @@ export class ArticlesService {
   }
 
   async getArticles(): Promise<Article[]> {
-    const articles: Article[] = await this.httpService.executeRequest(new ArticlesGetRequest()).toPromise<Article[]>();
+    const articles: Article[] = await this.httpService.executeRequest<Article[]>(new ArticlesGetRequest());
 
     const responseValidation = validate(articles,articlesResponseSchema);
     if (!responseValidation.valid) {

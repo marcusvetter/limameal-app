@@ -4,7 +4,7 @@ import {RequestMethod} from "@angular/http";
 export class ArticlesGetRequest extends AbstractRequest {
 
   constructor() {
-    super(RequestMethod.Get, '/articles')
+    super("GET", '/articles')
   }
 
 }

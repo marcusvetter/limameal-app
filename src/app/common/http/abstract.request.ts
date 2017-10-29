@@ -1,33 +1,23 @@
-import {Headers, RequestMethod, Request, ResponseContentType} from "@angular/http";
 import {Config} from "../config";
+import {HttpHeaders, HttpRequest} from "@angular/common/http";
 
 export abstract class AbstractRequest {
 
-  constructor(private requestMethod: RequestMethod,
+  constructor(private requestMethod: "GET" | "POST" | "PUT",
               private relativePath: string,
-              private body?: any,
-              private headers: Headers = new Headers()) {
-    this.addDefaultHeaders();
+              private body?: any) {
   }
 
-  public getRequest(): Request {
-    return new Request({
-      method: this.requestMethod,
-      headers: this.headers,
-      url: Config.BASE_URL + this.relativePath,
-      responseType: ResponseContentType.Json,
-      body: this.body
-    });
-  }
-
-  private addDefaultHeaders() {
-    if (this.body) {
-      this.headers.append("Content-Type", "application/json");
-    }
-
-    // if (Session.isTokenAvailable()) {
-    //   this.headers.append('Authorization', Session.getToken());
-    // }
+  public getRequest(): HttpRequest<any> {
+    return new HttpRequest<any>(
+      this.requestMethod,
+      Config.BASE_URL + this.relativePath,
+      this.body,
+      {
+        headers: new HttpHeaders({"Content-Type": "application/json"}),
+        responseType: "json"
+      }
+    );
   }
 
 }

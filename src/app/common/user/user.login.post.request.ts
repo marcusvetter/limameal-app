@@ -5,7 +5,7 @@ import {User} from "./user.model";
 export class UserLoginPostRequest extends AbstractRequest {
 
   constructor(user: User) {
-    super(RequestMethod.Post, "users/login", user);
+    super("POST", "users/login", user);
   }
 
 }
