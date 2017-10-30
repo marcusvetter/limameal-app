@@ -12,6 +12,8 @@ import {ArticlesService} from "./articles/articles.service";
 import {HttpService} from "./common/http/http.service";
 import {CartService} from "./cart/cart.service";
 import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButtonModule, MatListModule} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -23,8 +25,11 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     RouterModule.forRoot(APP_ROUTES),
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    MatButtonModule,
+    MatListModule
   ],
   providers: [
     HttpService,
